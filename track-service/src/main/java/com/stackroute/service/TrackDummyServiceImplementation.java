@@ -4,6 +4,8 @@ import com.stackroute.domain.Track;
 import com.stackroute.exceptions.TrackAlreadyExistException;
 import com.stackroute.exceptions.TrackNotFoundException;
 import com.stackroute.repository.TrackRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Profile;
@@ -17,6 +19,7 @@ import java.util.List;
     when there are multiple beans of same type "Primary" annotation will execute
 */
 public class TrackDummyServiceImplementation implements TrackService {
+    private final Logger log = (Logger) LoggerFactory.getLogger(this.getClass());
     private TrackRepository trackRepository;
 
     @Autowired
@@ -26,37 +29,55 @@ public class TrackDummyServiceImplementation implements TrackService {
 
     @Override
     public Track saveTrack(Track track) throws TrackAlreadyExistException {
-        System.out.println("save track");
+        log.debug("This is a debug message");
+        log.info("This is an info message");
+        log.warn("This is a warn message");
+        log.error("This is an error message");
         return null;
     }
 
     @Override
     public List<Track> getAllTracks() {
-        System.out.println("retrieve tracks");
+        log.debug("This is a debug message");
+        log.info("This is an info message");
+        log.warn("This is a warn message");
+        log.error("This is an error message");
         return null;
     }
 
     @Override
     public Track getTrackById(int id) throws TrackNotFoundException {
-        System.out.println("Retrieve a track");
+        log.debug("This is a debug message");
+        log.info("This is an info message");
+        log.warn("This is a warn message");
+        log.error("This is an error message");
         return null;
     }
 
     @Override
     public Track deleteById(int id) throws TrackNotFoundException {
-        System.out.println("delete a track");
+        log.debug("This is a debug message");
+        log.info("This is an info message");
+        log.warn("This is a warn message");
+        log.error("This is an error message");
         return null;
     }
 
     @Override
     public Track updateTrackbyId(int id, Track track) throws TrackNotFoundException {
-        System.out.println("update a track");
+        log.debug("This is a debug message");
+        log.info("This is an info message");
+        log.warn("This is a warn message");
+        log.error("This is an error message");
         return null;
     }
 
     @Override
     public Track searchTrackByName(String name) throws TrackNotFoundException {
-        System.out.println("search a track");
+        log.debug("This is a debug message");
+        log.info("This is an info message");
+        log.warn("This is a warn message");
+        log.error("This is an error message");
         return null;
     }
 }
